@@ -1,0 +1,39 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header> -->
+<ion-content padding id="page1" no-bounce>
+  <h1 id="home-heading1" class="animated slideInDown" text-center>
+    Previsão do tempo
+  </h1>
+  <ion-card [ngClass]="{'animated rubberBand': animar }">
+    <ion-item color="none" id="home-list-item19">
+      {{ previsao.name }} - {{ previsao.state }}
+    </ion-item>
+    <ion-item color="none">
+      <h1>{{ previsao.data.temperature }}<small><ion-icon name="thermometer"></ion-icon></small></h1>
+      <img [src]="imgPrevisao"><p>{{ previsao.data.condition }}</p>
+    </ion-item>
+  </ion-card>
+  <ion-item id="home-input4" class="animated slideInRight">
+    <ion-label floating>
+      Cidade
+    </ion-label>
+    <ion-input type="text" placeholder="" (keyup)="handleFilterChange($event)"></ion-input>
+  </ion-item>
+  <ion-list [@flyInOut]="cidadesFiltradas.length">
+    <ion-item  [ngClass]="{'jello': animarClickId == cidade.id && !animarNegativa, 
+                          'shake': animarClickId == cidade.id && animarNegativa  }"
+              color="none" *ngFor="let cidade of cidadesFiltradas; let i = index;"  
+              (click)="cidadeClick(cidade.id)" class="animated" >
+      <span>{{ cidade.name }} - {{ cidade.state }}</span>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

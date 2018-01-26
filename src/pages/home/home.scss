@@ -1,0 +1,27 @@
+page-home {
+    h1 {
+        animation-duration: 2s !important;
+    }
+
+    ion-card {
+        animation-duration: 1s !important;
+        ion-item {
+            text-align: center !important;
+            background-color: transparent;
+        }
+        img {
+            display: inline;
+            width: 45px;
+        }
+        // &.activate {
+        //     background-color: antiquewhite;
+        //     box-shadow: 6px 6px 16px;
+        //     position: relative;
+        //     transform: translate(-4px,- 4px);
+        // }
+    }
+
+    ion-list ion-item {
+        animation-duration: 0.3s !important;
+    }
+}
